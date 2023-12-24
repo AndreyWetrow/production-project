@@ -1,4 +1,4 @@
-import React, { Suspense, useContext, useState } from "react";
+import React, { Suspense, useContext, useEffect, useState } from "react";
 import Counter from "../components/Counter";
 import "./styles/index.scss";
 import { classNames } from "shared/lib/classNames/classNames";
@@ -11,7 +11,9 @@ import { BrowserRouter } from "react-router-dom";
 
 const App = () => {
   const { theme } = useTheme();
-  const bool = true;
+  // useEffect(() => {
+  //   throw new Error();
+  // }, []);
 
   return (
     <div className={classNames("app", {}, [theme])}>

@@ -7,12 +7,15 @@ import { ThemeProvider } from "app/provider/ThemeProvider";
 const container = document.getElementById("root");
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
 import "shared/confid/i18n/i18n";
+import { ErrorBoundary } from "app/provider/ErrorBoundary";
 
 root.render(
   <BrowserRouter>
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>
+    <ErrorBoundary>
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
+    </ErrorBoundary>
   </BrowserRouter>
 );
 
